@@ -1,13 +1,16 @@
-document.getElementById("login-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+window.onload = function() {
+    const isAdmin = localStorage.getItem("admin");
 
-    if (username === "skyfollows" && password === "skyfollowsadmin") {
-        localStorage.setItem("admin", "true");
-        window.location.href = "home.html";
-    } else {
-        alert("Invalid login credentials.");
+    if (isAdmin) {
+        document.querySelectorAll('.admin-only').forEach(item => item.classList.add('show'));
     }
-});
+
+    document.querySelectorAll('.dashboard-item').forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.style.transform = 'scale(1.1)';
+        });
+        item.addEventListener('mouseout', () => {
+            item.style.transform = 'scale(1)';
+        });
+    });
+};
