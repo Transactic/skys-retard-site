@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spacey Login</title>
+    <title>Login with Discord</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
     <link rel="icon" href="https://cdn.discordapp.com/avatars/1299305333440905278/a4f65037bf1679d39c0d6873ade8ba18.webp">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Spacey Login</h1>
-        <button id="discord-login">Login with Discord</button>
-
-        <form id="admin-login" style="display: none;">
-            <h2>Admin Login</h2>
-            <input type="text" id="admin-username" placeholder="Username" required>
-            <input type="password" id="admin-password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
+    <div class="center-container">
+        <h1 class="title">Welcome to Spacey Login</h1>
+        <button id="discord-login" class="login-button">Login with Discord</button>
     </div>
 </body>
+<script>
+    document.getElementById("discord-login").addEventListener("click", () => {
+        const clientId = "YOUR_DISCORD_CLIENT_ID";
+        const redirectUri = "YOUR_REDIRECT_URI";
+        const scope = "identify";
+        const responseType = "code";
+
+        window.location.href = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${scope}`;
+    });
+</script>
 </html>
