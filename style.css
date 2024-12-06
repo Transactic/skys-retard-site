@@ -2,35 +2,41 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #1e3a8a, #2563eb);
+    background: linear-gradient(135deg, #2563eb, #1e40af);
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-h1, h2 {
+h1, h2, p {
+    margin: 0;
+    padding: 10px;
     text-align: center;
 }
 
-.centered-container {
+.hero-container {
     text-align: center;
-    margin-top: 20%;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .auth-container {
-    max-width: 400px;
-    margin: 10% auto;
-    background: rgba(255, 255, 255, 0.1);
+    width: 400px;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.auth-container h2 {
-    margin-bottom: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     background-color: #2563eb;
     border: none;
     border-radius: 5px;
@@ -38,41 +44,26 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #1e3a8a;
+    background-color: #1e40af;
 }
 
-.primary-button {
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 8px;
-    background-color: #2563eb;
-    color: white;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-}
-
-.primary-button:hover {
-    background-color: #1e3a8a;
-}
-
-.input {
-    display: block;
+input {
     width: 90%;
     margin: 10px auto;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
+    display: block;
+    text-align: center;
 }
 
 .redirect-link {
-    text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .redirect-link a {
@@ -84,19 +75,19 @@ button:hover {
     text-decoration: underline;
 }
 
-.home-container {
-    padding: 20px;
-}
-
 .dashboard {
     display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 20px;
 }
 
 .sidebar {
     width: 200px;
-    background: #1e3a8a;
-    padding: 10px;
-    border-radius: 8px;
+    background: #1e40af;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar ul {
@@ -105,14 +96,15 @@ button:hover {
 }
 
 .sidebar ul li {
-    margin: 15px 0;
+    margin: 20px 0;
     text-align: center;
 }
 
 .sidebar ul li img {
-    width: 40px;
-    height: 40px;
-    opacity: 0.7;
+    width: 50px;
+    height: 50px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .sidebar ul li img:hover {
@@ -122,4 +114,7 @@ button:hover {
 main {
     flex-grow: 1;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
 }
