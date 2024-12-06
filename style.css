@@ -1,49 +1,112 @@
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #001f3f, #003f7f, #005082);
-    background-image: url('https://www.solarsystemscope.com/textures/download/2k_stars_milky_way.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #e0f7fa;
 }
 
-.center-container {
+h2 {
     text-align: center;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.login-button {
-    background-color: #5865F2;
-    color: white;
-    font-size: 1.2em;
-    padding: 15px 30px;
-    border: none;
+.index-container, .login-container, .signup-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    border-radius: 4px;
 }
 
-.login-button:hover {
-    background-color: #4752c4;
-    transform: scale(1.05);
+button:hover {
+    background-color: #45a049;
 }
 
-.login-button:active {
-    transform: scale(1);
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+a {
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+#dashboard {
+    width: 200px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+}
+
+#dashboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#dashboard li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.dashboard-item {
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+}
+
+.dashboard-item:hover {
+    opacity: 1;
+}
+
+.admin-only {
+    display: none;
+}
+
+.content {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.admin-only.show {
+    display: block;
+}
+
+.button-container {
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
 }
