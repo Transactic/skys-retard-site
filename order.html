@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Page</title>
+    <title>Order Services</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <style>
         * {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", Arial, sans-serif;
         }
         body {
             display: flex;
@@ -19,14 +19,14 @@
         }
         .sidebar {
             width: 250px;
-            background: linear-gradient(180deg, #452b6f, #6f42c1);
-            color: #fff;
+            background: #6f42c1;
+            color: white;
             padding: 20px;
         }
         .sidebar a {
             display: block;
             padding: 15px;
-            color: #fff;
+            color: white;
             text-decoration: none;
             font-weight: bold;
         }
@@ -44,31 +44,53 @@
             font-weight: bold;
             border: none;
             border-radius: 10px;
+            cursor: pointer;
         }
         .btn:hover {
             background: #9c51d7;
         }
     </style>
 </head>
-
 <body>
 
 <div class="sidebar">
     <h1>Dashboard</h1>
-    <a href="index.html">Place Order</a>
-    <a href="order.html" class="active">Order List</a>
-    <a href="#">Funds</a>
+    <a href="index.html">Home</a>
+    <a href="order.html" class="active">Order Services</a>
+    <a href="list.html">Order List</a>
+    <a href="funds.html">Funds</a>
 </div>
 
 <div class="main-content">
-    <h1>Order List</h1>
-    <div>
-        <p><strong>Service Orders:</strong></p>
-        <p>- 🚀 Twitch 1,000 Followers | Status: Processing</p>
-        <p>- 🚀 YouTube 100 Views | Status: Completed</p>
-        <p>- 🚀 TikTok Followers 500 | Status: Shipped</p>
-    </div>
+    <h2>Order Services</h2>
+
+    <label for="service">Select Service</label>
+    <select id="service">
+        <option value="Twitch_1k_Followers">🚀 1,000 Followers | $0.25 (Twitch)</option>
+        <option value="Twitch_100_Views">🚀 100 Views [10min] | $1.00 (Twitch)</option>
+        <option value="Youtube_100_Views">🚀 100 Views | $0.50 (YouTube)</option>
+        <option value="Youtube_100_Subs">🚀 100 Subs | $9.00 (YouTube)</option>
+        <option value="Tiktok_1k_Views">🚀 1,000 Views | $0.10 (TikTok)</option>
+        <option value="Tiktok_100_Followers">🚀 100 Followers | $1.50 (TikTok)</option>
+        <option value="Tiktok_100_Likes">🚀 100 Likes | $0.80 (TikTok)</option>
+        <option value="Instagram_1k_Views">🚀 1,000 Views | $0.60 (Instagram)</option>
+        <option value="Instagram_100_Followers">🚀 100 Followers | $0.80 (Instagram)</option>
+    </select>
+
+    <button class="btn" onclick="placeOrder()">Place Order</button>
+
+    <p id="order-status" style="color: green; font-weight: bold; margin-top: 20px;"></p>
 </div>
+
+<script>
+    let balance = 0;
+
+    function placeOrder() {
+        const service = document.getElementById('service').value;
+        alert(`Order Placed: ${service}`);
+        document.getElementById('order-status').innerText = `Order ${service} has been placed successfully!`;
+    }
+</script>
 
 </body>
 </html>
