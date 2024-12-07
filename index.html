@@ -21,131 +21,84 @@
             width: 250px;
             background: linear-gradient(180deg, #452b6f, #6f42c1);
             color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
-        .sidebar h1 {
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .sidebar .menu {
-            width: 100%;
-        }
-        .sidebar .menu a {
+        .sidebar a {
             display: block;
-            padding: 15px 20px;
+            padding: 15px;
             color: #fff;
             text-decoration: none;
-            margin: 10px 0;
-            text-align: left;
-            font-size: 14px;
-            font-weight: 500;
-            border-radius: 10px;
-            transition: background 0.3s ease, transform 0.2s ease;
+            font-weight: bold;
+            transition: background 0.3s;
         }
-        .sidebar .menu a:hover {
+        .sidebar a:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: translateX(10px);
         }
         .main-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .topbar {
-            background: linear-gradient(90deg, #6f42c1, #9c51d7);
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom-left-radius: 15px;
-            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        .content {
             padding: 20px;
-            overflow-y: auto;
+            flex-grow: 1;
         }
         .dashboard-section {
             background: #fff;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
-        .dashboard-section h2 {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
-        .dashboard-section p {
-            font-size: 14px;
-            color: #555;
-        }
-        .discord-section {
-            background: linear-gradient(90deg, #7289da, #4f64c4);
+        .btn {
+            background: #6f42c1;
             color: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
+            padding: 15px;
             text-align: center;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        .discord-section h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .discord-section a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #fff;
-            color: #7289da;
-            border-radius: 25px;
-            text-decoration: none;
             font-weight: bold;
-            font-size: 14px;
-            transition: background 0.3s ease, transform 0.2s ease;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
         }
-        .discord-section a:hover {
-            background: #f3f4f6;
-            transform: scale(1.1);
+        .btn:hover {
+            background: #9c51d7;
         }
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h1>Dashboard</h1>
-        <div class="menu">
-            <a href="order.html">Place Order</a>
-            <a href="#order-list">Order List</a>
-            <a href="#funds">Funds</a>
+
+<div class="sidebar">
+    <h1>Dashboard</h1>
+    <a href="index.html">Place Order</a>
+    <a href="order.html">Order List</a>
+    <a href="#">Funds</a>
+</div>
+
+<div class="main-content">
+    <div class="dashboard-section">
+        <h2>Order Services</h2>
+
+        <div class="form-group">
+            <label for="service">Select a Service</label>
+            <select id="service" name="service">
+                <option value="Twitch_1k_Followers">🚀 1,000 Followers | $0.25 (Twitch)</option>
+                <option value="Twitch_100_Views">🚀 100 Views [10min] | $1.00 (Twitch)</option>
+
+                <option value="Youtube_100_Views">🚀 100 Views | $0.50 (YouTube)</option>
+                <option value="Youtube_100_Subs">🚀 100 Subs | $9.00 (YouTube)</option>
+
+                <option value="Tiktok_1k_Views">🚀 1,000 Views | $0.10 (TikTok)</option>
+                <option value="Tiktok_100_Followers">🚀 100 Followers | $1.50 (TikTok)</option>
+                <option value="Tiktok_100_Likes">🚀 100 Likes | $0.80 (TikTok)</option>
+
+                <option value="Instagram_1k_Views">🚀 1,000 Views | $0.60 (Instagram)</option>
+                <option value="Instagram_100_Followers">🚀 100 Followers | $0.80 (Instagram)</option>
+            </select>
         </div>
+
+        <button class="btn" onclick="submitOrder()">Submit Order</button>
     </div>
-    <div class="main-content">
-        <div class="topbar">
-            <div>Welcome, User</div>
-            <div>Balance: $0.00</div>
-        </div>
-        <div class="content">
-            <div class="dashboard-section">
-                <h2>Overview</h2>
-                <p>Manage your orders, funds, and services easily from this dashboard.</p>
-            </div>
-            <div class="discord-section">
-                <h2>Join Our Discord for Support</h2>
-                <a href="https://discord.gg/skyfollows" target="_blank">Join Now</a>
-            </div>
-        </div>
-    </div>
+</div>
+
+<script>
+    function submitOrder() {
+        alert('Your order has been successfully submitted!');
+    }
+</script>
+
 </body>
 </html>
