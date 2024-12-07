@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         * {
             margin: 0;
@@ -13,14 +12,11 @@
             box-sizing: border-box;
             font-family: "Poppins", Arial, sans-serif;
         }
-
         body {
             display: flex;
             height: 100vh;
-            background: linear-gradient(135deg, #f5f5f5, #e8eaed);
-            overflow: hidden;
+            background: linear-gradient(135deg, #f3f4f6, #eceff1);
         }
-
         .sidebar {
             width: 250px;
             background: linear-gradient(180deg, #452b6f, #6f42c1);
@@ -33,43 +29,36 @@
             border-bottom-right-radius: 15px;
             box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
         }
-
         .sidebar h1 {
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
-            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-
         .sidebar .menu {
             width: 100%;
         }
-
         .sidebar .menu a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            display: block;
             padding: 15px 20px;
             color: #fff;
             text-decoration: none;
             margin: 10px 0;
+            text-align: left;
             font-size: 14px;
             font-weight: 500;
             border-radius: 10px;
             transition: background 0.3s ease, transform 0.2s ease;
         }
-
         .sidebar .menu a:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateX(10px);
         }
-
         .main-content {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-
         .topbar {
             background: linear-gradient(90deg, #6f42c1, #9c51d7);
             color: #fff;
@@ -80,70 +69,36 @@
             border-bottom-left-radius: 15px;
             box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
         }
-
-        .topbar .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .topbar .user-info img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-
         .content {
             padding: 20px;
-            overflow-y: auto;
         }
-
-        .card {
-            background: #fff;
+        .discord-section {
+            background: linear-gradient(90deg, #7289da, #4f64c4);
+            color: #fff;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .discord-section {
+            margin: 40px auto 20px;
             text-align: center;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
         }
-
+        .discord-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
         .discord-section a {
-            margin-top: 10px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(90deg, #6f42c1, #9c51d7);
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(90deg, #9c51d7, #6f42c1);
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            margin-bottom: 5px;
-            display: block;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #fff;
+            color: #7289da;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
             font-size: 14px;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
+        .discord-section a:hover {
+            background: #f3f4f6;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -151,25 +106,20 @@
     <div class="sidebar">
         <h1>Dashboard</h1>
         <div class="menu">
-            <a href="#"><i class="fas fa-home"></i>Home</a>
-            <a href="#"><i class="fas fa-list"></i>Orders</a>
-            <a href="#"><i class="fas fa-money-bill"></i>Funds</a>
+            <a href="order.html">Place Order</a>
+            <a href="#order-list">Order List</a>
+            <a href="#funds">Funds</a>
         </div>
     </div>
-
     <div class="main-content">
         <div class="topbar">
             <div>Welcome, User</div>
-            <div class="user-info">
-                <img src="https://via.placeholder.com/40" alt="User">
-                <div>Balance: $0.00</div>
-            </div>
+            <div>Balance: $0.00</div>
         </div>
-
         <div class="content">
-            <div class="card discord-section">
+            <div class="discord-section">
                 <h2>Join Our Discord for Support</h2>
-                <a href="#" class="btn-primary">Join Now</a>
+                <a href="https://discord.gg/skyfollows" target="_blank">Join Now</a>
             </div>
         </div>
     </div>
