@@ -71,13 +71,33 @@
         }
         .content {
             padding: 20px;
+            overflow-y: auto;
+        }
+        .dashboard-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dashboard-section h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .dashboard-section p {
+            font-size: 14px;
+            color: #555;
         }
         .discord-section {
             background: linear-gradient(90deg, #7289da, #4f64c4);
             color: #fff;
             padding: 20px;
             border-radius: 15px;
-            margin: 40px auto 20px;
+            margin: 20px 0;
             text-align: center;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
         }
@@ -117,6 +137,10 @@
             <div>Balance: $0.00</div>
         </div>
         <div class="content">
+            <div class="dashboard-section">
+                <h2>Overview</h2>
+                <p>Manage your orders, funds, and services easily from this dashboard.</p>
+            </div>
             <div class="discord-section">
                 <h2>Join Our Discord for Support</h2>
                 <a href="https://discord.gg/skyfollows" target="_blank">Join Now</a>
