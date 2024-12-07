@@ -3,59 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", Arial, sans-serif;
-        }
-        body {
-            display: flex;
-            height: 100vh;
-            background: linear-gradient(135deg, #f3f4f6, #eceff1);
+            font-family: Arial, sans-serif;
         }
         .sidebar {
-            width: 250px;
-            background: linear-gradient(180deg, #452b6f, #6f42c1);
-            color: #fff;
+            background: #6f42c1;
+            color: white;
             padding: 20px;
-        }
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .sidebar a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            width: 250px;
         }
         .main-content {
             padding: 20px;
-            flex-grow: 1;
-        }
-        .dashboard-section {
-            background: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
         .btn {
-            background: #6f42c1;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
+            background: #ff5722;
+            color: white;
+            padding: 10px;
             font-weight: bold;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
         }
         .btn:hover {
-            background: #9c51d7;
+            background: #e64a19;
         }
     </style>
 </head>
@@ -63,42 +33,21 @@
 
 <div class="sidebar">
     <h1>Dashboard</h1>
-    <a href="index.html">Place Order</a>
-    <a href="order.html">Order List</a>
-    <a href="#">Funds</a>
+    <a href="index.html">Home</a>
+    <a href="order.html">Order Services</a>
+    <a href="list.html">Order List</a>
+    <a href="funds.html">Funds</a>
 </div>
 
 <div class="main-content">
-    <div class="dashboard-section">
-        <h2>Order Services</h2>
-
-        <div class="form-group">
-            <label for="service">Select a Service</label>
-            <select id="service" name="service">
-                <option value="Twitch_1k_Followers">🚀 1,000 Followers | $0.25 (Twitch)</option>
-                <option value="Twitch_100_Views">🚀 100 Views [10min] | $1.00 (Twitch)</option>
-
-                <option value="Youtube_100_Views">🚀 100 Views | $0.50 (YouTube)</option>
-                <option value="Youtube_100_Subs">🚀 100 Subs | $9.00 (YouTube)</option>
-
-                <option value="Tiktok_1k_Views">🚀 1,000 Views | $0.10 (TikTok)</option>
-                <option value="Tiktok_100_Followers">🚀 100 Followers | $1.50 (TikTok)</option>
-                <option value="Tiktok_100_Likes">🚀 100 Likes | $0.80 (TikTok)</option>
-
-                <option value="Instagram_1k_Views">🚀 1,000 Views | $0.60 (Instagram)</option>
-                <option value="Instagram_100_Followers">🚀 100 Followers | $0.80 (Instagram)</option>
-            </select>
-        </div>
-
-        <button class="btn" onclick="submitOrder()">Submit Order</button>
-    </div>
+    <h2>Welcome to Your Dashboard</h2>
+    <p><strong>Balance:</strong> $50</p>
+    <p><strong>Recent Purchases:</strong></p>
+    <ul>
+        <li>🚀 1,000 Followers (Twitch) - $0.25</li>
+        <li>🚀 100 Views (YouTube) - $1.00</li>
+    </ul>
 </div>
-
-<script>
-    function submitOrder() {
-        alert('Your order has been successfully submitted!');
-    }
-</script>
 
 </body>
 </html>
