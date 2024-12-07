@@ -14,124 +14,63 @@
         }
         body {
             display: flex;
-            flex-direction: column;
             height: 100vh;
             background: linear-gradient(135deg, #f3f4f6, #eceff1);
+        }
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, #452b6f, #6f42c1);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
         }
         .topbar {
             background: linear-gradient(90deg, #6f42c1, #9c51d7);
             color: #fff;
-            padding: 15px 20px;
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
+            padding: 15px;
         }
-        .content {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .form-section {
+        .order-form {
             background: #fff;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
-        }
-        .form-section h2 {
-            margin-bottom: 20px;
-            font-size: 20px;
-            color: #6f42c1;
-            font-weight: 600;
-            text-align: center;
         }
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            font-size: 14px;
-            color: #555;
-        }
-        .form-group select, .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 14px;
-            background: #f9f9f9;
-            outline: none;
-            transition: box-shadow 0.3s ease, border 0.3s ease;
-        }
-        .form-group select:focus, .form-group input:focus {
-            border-color: #6f42c1;
-            box-shadow: 0px 0px 5px rgba(111, 66, 193, 0.5);
-        }
-        .btn-submit {
-            background: linear-gradient(90deg, #6f42c1, #9c51d7);
+        .btn {
+            background: #6f42c1;
             color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 15px;
             font-weight: bold;
+            border: none;
+            border-radius: 10px;
             cursor: pointer;
-            width: 100%;
-            transition: background 0.3s ease;
         }
-        .btn-submit:hover {
-            background: linear-gradient(90deg, #9c51d7, #6f42c1);
+        .btn:hover {
+            background: #9c51d7;
         }
     </style>
 </head>
 <body>
-    <div class="topbar">
-        Place a New Order
+    <div class="sidebar">
+        <h1>Dashboard</h1>
+        <a href="index.html">Dashboard</a>
+        <a href="order.html" class="active">Place Order</a>
+        <a href="#order-list">Order List</a>
     </div>
-    <div class="content">
-        <div class="form-section">
-            <h2>Order Form</h2>
-            <form action="" method="POST">
-                <div class="form-group">
-                    <label for="platform">Platform</label>
-                    <select id="platform" name="platform">
-                        <option value="Twitch">🚀 Twitch</option>
-                        <option value="Youtube">🚀 YouTube</option>
-                        <option value="Tiktok">🚀 TikTok</option>
-                        <option value="Instagram">🚀 Instagram</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="service">Service</label>
-                    <select id="service" name="service">
-                        <option value="Twitch_Catogory" disabled>Select [Twitch]</option>
-                        <option value="Twitch_1k_Followers">🚀 1,000 Followers | $0.25</option>
-                        <option value="Twitch_100_Views_10min">🚀 100 Views [10min] | $1.00</option>
-                        <option value="Youtube_Catogory" disabled>-- YouTube --</option>
-                        <option value="Youtube_100_Views">🚀 100 Views | $0.50</option>
-                        <option value="Youtube_100_Subs">🚀 100 Subs | $9.00</option>
-                        <option value="Tiktok_Catogory" disabled>-- TikTok --</option>
-                        <option value="Tiktok_1k_Views">🚀 1,000 Views | $0.10</option>
-                        <option value="Tiktok_100_Followers">🚀 100 Followers | $1.50</option>
-                        <option value="Tiktok_100_Likes">🚀 100 Likes | $0.80</option>
-                        <option value="Instagram_Catgory" disabled>-- Instagram --</option>
-                        <option value="Instagram_1k_Views">🚀 1,000 Views | $0.60</option>
-                        <option value="Instagram_100_Followers">🚀 100 Followers | $0.80</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="link">Link (profile/video)</label>
-                    <input type="text" id="link" name="link" required />
-                </div>
-                <div class="form-group">
-                    <button type="submit" name="new_order" class="btn-submit">Place Order</button>
-                </div>
-            </form>
+    <div class="main-content">
+        <div class="topbar">Place Your Order</div>
+        <div class="order-form">
+            <label>Service</label>
+            <input type="text" placeholder="Enter Service Details">
+            <button class="btn" type="submit">Submit Order</button>
         </div>
     </div>
 </body>
