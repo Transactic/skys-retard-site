@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place Order</title>
+    <title>Order Page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <style>
         * {
@@ -21,57 +21,54 @@
             width: 250px;
             background: linear-gradient(180deg, #452b6f, #6f42c1);
             color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
+            padding: 20px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
         .main-content {
+            padding: 20px;
             flex-grow: 1;
-            padding: 20px;
-        }
-        .topbar {
-            background: linear-gradient(90deg, #6f42c1, #9c51d7);
-            color: #fff;
-            padding: 15px;
-        }
-        .order-form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        .form-group {
-            margin-bottom: 15px;
         }
         .btn {
             background: #6f42c1;
-            color: #fff;
+            color: white;
             padding: 15px;
             font-weight: bold;
             border: none;
             border-radius: 10px;
-            cursor: pointer;
         }
         .btn:hover {
             background: #9c51d7;
         }
     </style>
 </head>
+
 <body>
-    <div class="sidebar">
-        <h1>Dashboard</h1>
-        <a href="index.html">Dashboard</a>
-        <a href="order.html" class="active">Place Order</a>
-        <a href="#order-list">Order List</a>
+
+<div class="sidebar">
+    <h1>Dashboard</h1>
+    <a href="index.html">Place Order</a>
+    <a href="order.html" class="active">Order List</a>
+    <a href="#">Funds</a>
+</div>
+
+<div class="main-content">
+    <h1>Order List</h1>
+    <div>
+        <p><strong>Service Orders:</strong></p>
+        <p>- 🚀 Twitch 1,000 Followers | Status: Processing</p>
+        <p>- 🚀 YouTube 100 Views | Status: Completed</p>
+        <p>- 🚀 TikTok Followers 500 | Status: Shipped</p>
     </div>
-    <div class="main-content">
-        <div class="topbar">Place Your Order</div>
-        <div class="order-form">
-            <label>Service</label>
-            <input type="text" placeholder="Enter Service Details">
-            <button class="btn" type="submit">Submit Order</button>
-        </div>
-    </div>
+</div>
+
 </body>
 </html>
